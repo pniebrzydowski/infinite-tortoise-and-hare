@@ -1,13 +1,16 @@
 import { routerReducer as router } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
-// import applicationReducer from './application';
-// import { initialState as applicationState } from './application';
+import seriesReducer from './series';
+import { initialState as seriesState } from './series';
 
 const rootReducer = combineReducers({
-    router
+    router,
+    series: seriesReducer
 });
 
-export const initialStates = {};
+export const initialStates = {
+    series: seriesState
+};
 
 export default rootReducer;
