@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SeriesForm from '../SeriesForm';
 
 class SeriesList extends React.Component {
     componentDidMount() {
@@ -19,6 +20,8 @@ class SeriesList extends React.Component {
                         {s.name} - {s.startDate} to {s.endDate}
                     </div>;
                 })}
+
+                <SeriesForm />
             </div>
         );
     }

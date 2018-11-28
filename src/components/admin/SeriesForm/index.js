@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import View from '../../components/modules/Admin/SeriesForm';
+import View from './View';
 
 const mapStateToProps = () => {
     return {};
@@ -8,8 +8,8 @@ const mapStateToProps = () => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        save: () => {
-            console.log('save');
+        save: (values) => {
+            console.log(values);
         }
     }
 }
