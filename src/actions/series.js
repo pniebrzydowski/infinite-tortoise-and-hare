@@ -1,6 +1,5 @@
 import { GET_SERIES, GET_SERIES_SUCCESS, GET_SERIES_ERROR } from "./types";
 import { firestore } from "../firebase/firebase";
-import { Promise } from "es6-promise";
 
 export const getAllSeries = () => {
     return dispatch => {

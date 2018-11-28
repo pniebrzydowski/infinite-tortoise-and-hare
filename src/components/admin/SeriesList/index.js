@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import View from '../../components/modules/Admin/SeriesList';
-import { getAllSeries } from '../../actions/series';
+import View from './View';
+import { getAllSeries } from '../../../actions/series';
 
 const mapStateToProps = (state) => {
     return {
