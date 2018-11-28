@@ -8,12 +8,13 @@ export const getAllSeries = () => {
         return new Promise((resolve, reject) => {
             firestore.collection("series").get()
                 .then(querySnapshot => {
-                    console.log('start');
                     let data = [];
                     querySnapshot.forEach((doc) => {
-                        data.push(doc.data());
+                        let snapshotData = doc.data();
+                        snapshotData.startDate = new Date(snapshotData.startDate.seconds*1000).toLocaleDateString();
+                        snapshotData.endDate = new Date(snapshotData.endDate.seconds*1000).toLocaleDateString();
+                        data.push(snapshotData);
                     });
-                    console.log(data);
                     dispatch({ type: GET_SERIES_SUCCESS, data: data });
                     resolve(data);
                 }).catch(error => {

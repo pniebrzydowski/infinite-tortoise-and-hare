@@ -14,6 +14,11 @@ class SeriesList extends React.Component {
             <div>
                 <h2>All Series ({series !== null && series.length})</h2>
                 {series !== null && series.length === 0 && <p>No Series Found</p>}
+                {series !== null && series.length > 0 && series.map(s => {
+                    return <div key={s.name}>
+                        {s.name} - {s.startDate} to {s.endDate}
+                    </div>;
+                })}
             </div>
         );
     }
