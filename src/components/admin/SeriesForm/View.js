@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class SeriesForm extends React.Component {
     constructor(props) {
@@ -25,14 +28,30 @@ class SeriesForm extends React.Component {
     render() {
         return (
             <Formik
-                initialValues={{ name: '', startDate: '', endDate: ''}}
+                initialValues={{ name: '', startDate: new Date(), endDate: new Date()}}
                 validate={this.validate}
                 onSubmit={this.submit}>
                 {({ isSubmitting }) => (
                     <Form>
                         <h2>Add a new series</h2>
-                        <Field type="string" name="name" />
+                        <Field name="name" />
                         <ErrorMessage name="name" component="div" />
+                        <Field name="startDate">
+                        {({ field, form }) => (
+                            <DatePicker
+                                selected={field.value}
+                                onChange={val => form.setFieldValue('startDate', val)}
+                            />
+                        )}
+                        </Field>
+                        <Field name="endDate">
+                        {({ field, form }) => (
+                            <DatePicker
+                                selected={field.value}
+                                onChange={val => form.setFieldValue('endDate', val)}
+                            />
+                        )}
+                        </Field>
                         <button type="submit" disabled={isSubmitting}>Submit</button>
                     </Form>
                 )}
