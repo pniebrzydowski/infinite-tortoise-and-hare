@@ -11,6 +11,7 @@ class App extends React.Component {
                 <header />
                 <main>
                     <Switch>
+                        <Route exact path="/" component={Admin} />
                         <Route exact path="/admin" component={Admin} />
                     </Switch>
                 </main>
