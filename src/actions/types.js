@@ -1,3 +1,7 @@
 export const GET_SERIES = 'GET_SERIES';
 export const GET_SERIES_SUCCESS = 'GET_SERIES_SUCCESS';
 export const GET_SERIES_ERROR = 'GET_SERIES_ERROR';
+
+export const ADD_SERIES = 'ADD_SERIES';
+export const ADD_SERIES_SUCCESS = 'ADD_SERIES_SUCCESS';
+export const ADD_SERIES_ERROR = 'ADD_SERIES_ERROR';
